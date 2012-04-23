@@ -1,0 +1,13 @@
+<% if object[:routes] %>
+<div class="tags">
+  <h2>Routes</h2>
+  <ul class="routes method_details_list">
+    <% for r in object[:routes] %>
+		<li>[<%= r[:verb] %>] <%= r[:path].gsub(/(:|\*)\w+/) { |m| "<span style='font-family: monospace; color: green'>#{m}</span>"} %>
+			&raquo; <%= r[:rack_app] ? "<pre>#{r[:rack_app].inspect}</pre>" : link_object(P("#{r[:controller]}##{r[:action]}"), '#' + r[:action]) %>
+			 <%= (r[:name] && !r[:name].empty? ? "<span style='font-size: 85%'>(Rails Method: #{r[:name]})</span>" : '') %>
+		</li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

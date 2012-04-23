@@ -1,0 +1,12 @@
+<% if object[:routes] %>
+<div class="tags">
+  <h3>Routes:</h3>
+  <ul class="routes">
+    <% for r in object[:routes] %>
+		<li>[<%= r[:verb] %>] <%= r[:path].gsub(/(:|\*)\w+/) { |m| "<span style='font-family: monospace; color: green'>#{m}</span>"} %>
+			 <%= (r[:name] && !r[:name].empty? ? "<span style='font-size: 85%'>(Rails Method: #{r[:name]})</span>" : '') %>
+		</li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

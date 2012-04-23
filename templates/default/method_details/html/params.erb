@@ -1,0 +1,10 @@
+<% if object[:params] %>
+<div class="tags">
+  <h3>Params:</h3>
+  <ul class="params">
+    <% for p in object[:params] %>
+		<li>params[<%= link_object(P(p.gsub(':','').gsub("'",'').capitalize), p )%>]</li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
