@@ -41,4 +41,4 @@ To document a Rails project you can add other interesting plugins. I suggest you
 
   -	**Yard-Cucumber** [https://github.com/burtlo/yard-cucumber](https://github.com/burtlo/yard-cucumber)
   - **Yard-Rspec** [https://github.com/ogeidix/yard-spec-plugin](https://github.com/ogeidix/yard-spec-plugin) (* this in **not** the official gem yard-rspec)
-	
+  - **Yard-ActiveRecord** [https://github.com/theodorton/yard-activerecord](https://github.com/theodorton/yard-activerecord) 
