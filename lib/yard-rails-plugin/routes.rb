@@ -17,10 +17,10 @@ module YARD
             else
               controller = ''
             end
-            { name: route.name.to_s, verb: route.verb.to_s, path: route.path,
+            { name: route.name.to_s, verb: route.verb.to_s, path: route.path.spec.to_s,
               controller: controller , action: reqs[:action], rack_app: rack_app, constraints: constraints}
           end
-          @routes.reject! { |r| r[:path] =~ %r{/rails/info/properties|^/assets} }
+          @routes.reject! { |r| r[:path] =~ '/rails/info/properties|^/assets' }
         end
 
         def generate_routes_description_file(filename)
